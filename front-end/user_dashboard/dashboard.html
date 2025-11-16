@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Broker Dashboard - Realty Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0A74DA",
+              "background-light": "#F2F4F7",
+              "background-dark": "#101922",
+              "green-accent": "#12B76A",
+              "orange-accent": "#F79009",
+              "red-accent": "#D92D20",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.5rem",
+                "lg": "0.75rem",
+                "xl": "1rem",
+                "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+<div class="relative flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="flex w-64 flex-col border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark p-4 sticky top-0 h-screen">
+<div class="flex items-center gap-2.5 px-3 py-2">
+<span class="material-symbols-outlined text-primary text-3xl">real_estate_agent</span>
+<h1 class="text-xl font-bold text-slate-900 dark:text-white">Realty.</h1>
+</div>
+<nav class="flex flex-col gap-2 mt-8">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">other_houses</span>
+<p class="text-sm font-medium">Listings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<p class="text-sm font-medium">Messages</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<p class="text-sm font-medium">Analytics</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-4">
+<div class="flex gap-3 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="John Appleseed profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBV9Zq0seMFtuGmvv6P82cgBgrJEEuG5e9bIZa0_SyMRDOZCYA-mRAn6BGg4tUs6Kd-ox2vsAgizozEoHFfZUcjQhji0qaZ5zQubJ6uRj6t5oYVhpXkhlAaFIbjkbDXbKcVwXliv2_smvbR4KhIXXNyyDoEJP8UkOeaZHAGng8W733ozYHBMmq7zVNI0CymBN8Yk8ii9gQDZWBVujjgE5VR43GZj-08UvrMLJNeRNMnYkAZp1BmMzKhFwZ9Ak1VYgODDboSIwK0HQk");'></div>
+<div class="flex flex-col">
+<h2 class="text-slate-900 dark:text-white text-sm font-medium leading-normal">John Appleseed</h2>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">john.appleseed@realty.com</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-6 py-4 sticky top-0 z-10">
+<div class="flex items-center gap-8">
+<label class="relative flex-1 min-w-80">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-slate-500">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 rounded-DEFAULT text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-slate-300 dark:border-slate-700 bg-transparent h-10 placeholder:text-slate-400 pl-10 text-sm" placeholder="Search for listings..." value=""/>
+</label>
+</div>
+<div class="flex gap-4 items-center">
+<button class="flex items-center justify-center overflow-hidden rounded-DEFAULT h-10 px-4 bg-primary text-white text-sm font-medium leading-normal tracking-wide gap-2">
+<span class="material-symbols-outlined">add</span>
+<span class="truncate">Add New Listing</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-full size-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<div class="flex-1 p-6 grid grid-cols-1 xl:grid-cols-3 gap-6">
+<!-- Main Content -->
+<div class="xl:col-span-2 flex flex-col gap-6">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Welcome, John!</h2>
+<!-- Stats -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="flex flex-col gap-1 rounded-lg p-4 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Active Listings</p>
+<div class="flex items-end gap-2">
+<p class="text-slate-900 dark:text-white text-3xl font-bold">12</p>
+<p class="text-green-accent text-sm font-medium leading-normal pb-1">+2%</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-lg p-4 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Total Views</p>
+<div class="flex items-end gap-2">
+<p class="text-slate-900 dark:text-white text-3xl font-bold">15,820</p>
+<p class="text-green-accent text-sm font-medium leading-normal pb-1">+8%</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-lg p-4 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">New Leads (30d)</p>
+<div class="flex items-end gap-2">
+<p class="text-slate-900 dark:text-white text-3xl font-bold">34</p>
+<p class="text-green-accent text-sm font-medium leading-normal pb-1">+15%</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-lg p-4 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Properties Sold</p>
+<div class="flex items-end gap-2">
+<p class="text-slate-900 dark:text-white text-3xl font-bold">5</p>
+<p class="text-red-accent text-sm font-medium leading-normal pb-1">-5%</p>
+</div>
+</div>
+</div>
+<!-- Charts -->
+<div class="flex rounded-lg border border-slate-200 dark:border-slate-800 p-6 bg-white dark:bg-slate-900/50">
+<div class="flex w-full flex-col gap-2">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Listing Views Over Time</p>
+<div class="flex items-baseline gap-4">
+<p class="text-slate-900 dark:text-white tracking-tight text-4xl font-bold truncate">2,194</p>
+<div class="flex gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Last 30 Days</p>
+<p class="text-green-accent text-sm font-medium">+12.5%</p>
+</div>
+</div>
+<div class="flex min-h-[220px] flex-1 flex-col gap-8 pt-4">
+<svg fill="none" height="100%" preserveaspectratio="none" viewbox="0 0 472 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#chart-gradient)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#0A74DA" stroke-linecap="round" stroke-width="2"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="chart-gradient" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#0A74DA" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#0A74DA" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+<!-- Property Listings Table -->
+<div class="flex flex-col gap-4">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">My Property Listings</h3>
+<div class="overflow-x-auto bg-white dark:bg-slate-900/50 rounded-lg border border-slate-200 dark:border-slate-800">
+<table class="w-full text-sm text-left">
+<thead class="text-xs text-slate-500 dark:text-slate-400 uppercase bg-slate-50 dark:bg-slate-800/50">
+<tr>
+<th class="px-6 py-3" scope="col">Property</th>
+<th class="px-6 py-3" scope="col">Price</th>
+<th class="px-6 py-3" scope="col">Status</th>
+<th class="px-6 py-3" scope="col">Views</th>
+<th class="px-6 py-3" scope="col"><span class="sr-only">Actions</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-slate-200 dark:border-slate-800">
+<td class="px-6 py-4 font-medium whitespace-nowrap">
+<div class="flex items-center gap-4">
+<img class="size-12 rounded-DEFAULT object-cover" data-alt="Modern suburban house with a pool" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe5SDSB9a8xUpD1KXfNPRMdMeSCRpuUi16RHI_xDUAYS4RHwRkj502hN36ZaqPVxkOBqS5Qxvu3W9vwi15MK-XSk4D_jPT3vZ_ohnlQlT9vyfquqH1wNFWPkaIhCrwionD7a1zOK_EGiUB6mlZR6tLZmp4NacSgNPGiyJbJxRnHexi6r-NHG8t3rKeGzat6gGqHS6gJ0UfyVFtSv72rcFpdq5IqsrhzCWJHUP9Xl6H0VtS_S-tZb0HNIpdN7WB-04MmsKsHEGTfjc"/>
+<div class="flex flex-col">
+<span class="font-semibold text-slate-800 dark:text-slate-100">123 Maple Street</span>
+<span class="text-xs text-slate-500">Sunnyvale, CA</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-semibold text-slate-800 dark:text-slate-100">$1,250,000</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-accent/10 text-green-accent">Active</span>
+</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-300">4,281</td>
+<td class="px-6 py-4 text-right">
+<div class="flex gap-2 justify-end">
+<button class="p-2 rounded-DEFAULT hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined text-base">visibility</span></button>
+<button class="p-2 rounded-DEFAULT hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined text-base">edit</span></button>
+<button class="p-2 rounded-DEFAULT hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined text-base">more_horiz</span></button>
+</div>
+</td>
+</tr>
+<tr class="border-b border-slate-200 dark:border-slate-800">
+<td class="px-6 py-4 font-medium whitespace-nowrap">
+<div class="flex items-center gap-4">
+<img class="size-12 rounded-DEFAULT object-cover" data-alt="Cozy single-family home with a garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDupA-Nv7u2Njxq11MNkAxcGTpOD7qotLFl6q2MpNvj7hQ85-JjQGYhBDExzstTo6PpifOxEvYs5U8X4dJ4Iwkjyo1oJ9MDxdA7FDDYBLla_PxfB9wVZrk7NaPTFf9Db6G8Tu18_JwdeJyZTSfoFWJ1o3KL3iYn1XtMrqtD6mwoWHrX_xQWftJHtKkcj26r0cugevpvm3tZcS6pJqMQcDVvSEsNKnTj2hBhCutI6-d9XF1qlPFsQ14Mp8Xl91_1ojlloyGZ665agZc"/>
+<div class="flex flex-col">
+<span class="font-semibold text-slate-800 dark:text-slate-100">456 Oak Avenue</span>
+<span class="text-xs text-slate-500">Springfield, IL</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-semibold text-slate-800 dark:text-slate-100">$875,000</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-accent/10 text-orange-accent">Pending</span>
+</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-300">11,923</td>
+<td class="px-6 py-4 text-right">
+<div class="flex gap-2 justify-end">
+<button class="p-2 rounded-DEFAULT hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined text-base">visibility</span></button>
+<button class="p-2 rounded-DEFAULT hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined text-base">edit</span></button>
+<button class="p-2 rounded-DEFAULT hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined text-base">more_horiz</span></button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium whitespace-nowrap">
+<div class="flex items-center gap-4">
+<img class="size-12 rounded-DEFAULT object-cover" data-alt="Classic colonial-style house" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrMborZS6Z2q_U4Xeeokar6Cra97fNFdWgUHebDCFyV8-lsOEaFdGCwNoL1VzTXxXzvyhY3tL7poWh5tGfJFR0Jwwi2ONwgMM7onbLcFMY0198lzso3WPCrtod6fLp6gR-3WBEiaQKdGbQl8YPHMUB0_aAfRtQRxsbbTbzhdoXuehx4X6FDsuC-30OB0RsMtMQc0qcOQWOS1pLrhNt3tDMbkF5v0fpp0SOsximBbNi4PHDEgn3uXmmNg6r_-dLAb2N5Nws82Q6BR0"/>
+<div class="flex flex-col">
+<span class="font-semibold text-slate-800 dark:text-slate-100">789 Pine Lane</span>
+<span class="text-xs text-slate-500">Georgetown, TX</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-semibold text-slate-800 dark:text-slate-100">$620,000</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-accent/10 text-red-accent">Sold</span>
+</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-300">8,150</td>
+<td class="px-6 py-4 text-right">
+<div class="flex gap-2 justify-end">
+<button class="p-2 rounded-DEFAULT hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined text-base">visibility</span></button>
+<button class="p-2 rounded-DEFAULT hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined text-base">edit</span></button>
+<button class="p-2 rounded-DEFAULT hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined text-base">more_horiz</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Sidebar / Recent Messages -->
+<aside class="xl:col-span-1 flex flex-col gap-6">
+<div class="bg-white dark:bg-slate-900/50 rounded-lg p-6 border border-slate-200 dark:border-slate-800">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Recent Inquiries</h3>
+<div class="flex flex-col gap-4">
+<div class="flex gap-4">
+<img class="size-10 rounded-full object-cover" data-alt="Jane Doe profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEzhUFoOi3xmL_VEbZy8XdK4h7kfyVq2sRNa4eDLDFDMxy5QQXosM6BTGoy4uFy8_hW10pacaKjDtlAcr50CroSPMi7ATl9Ki-T-sa0Fmsx1QgFxotJAsp_5TCygwxmHmfpoCaQCL76jP8feO6whnwCmirf9Tt6XFkgu2CbQpiZjrqmIW2yS19l6nk6-Naes8fwbajIwPPfTHzIih5derI-OlZ9_sLyYyauQ6Byo5t16uy_HlOC1-1PZEAcCgJdvsx21vwNTPnBYo"/>
+<div class="flex flex-col text-sm">
+<p class="font-semibold text-slate-800 dark:text-slate-100">Jane Doe</p>
+<p class="text-slate-500 dark:text-slate-400">re: 123 Maple Street</p>
+<p class="text-slate-600 dark:text-slate-300 mt-1 line-clamp-2">"Hi, is this property still available? I'd love to schedule a viewing..."</p>
+</div>
+</div>
+<hr class="border-slate-200 dark:border-slate-800"/>
+<div class="flex gap-4">
+<img class="size-10 rounded-full object-cover" data-alt="Mark Smith profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB74ncxjFT6XhamhdazNqLgm0jUXTnYXGLZUVZIKCccubixcjI16nR7ocLqnvkd7crjv_JGNFhAo_46WEB4KQaQGEFCM5zj8uiHhZMSqqUh5yfV0QQU8_RXRuf4RrQjm4fEurni_A5jRLnTJrzlJyMn0pfCEa2GfdiaRE2uHjXFFZbBjD7wydnTWo8033drVOfE3UdolcSNL62GoMEZxckcppViSAuR6_90NZCUGkPQG9ZHpvC4b8UNki3pUwfsXN7o_2rM5m-RY74"/>
+<div class="flex flex-col text-sm">
+<p class="font-semibold text-slate-800 dark:text-slate-100">Mark Smith</p>
+<p class="text-slate-500 dark:text-slate-400">re: 456 Oak Avenue</p>
+<p class="text-slate-600 dark:text-slate-300 mt-1 line-clamp-2">"I'm very interested in this home. Are you accepting backup offers?"</p>
+</div>
+</div>
+<hr class="border-slate-200 dark:border-slate-800"/>
+<div class="flex gap-4">
+<img class="size-10 rounded-full object-cover" data-alt="Alice Walker profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6xEWtmirEshZxJkhvm8aX2WPTpKKMd6k0eTE9LxAlbTvS19PMDzaE7-gb0lfRQ0azIot5lMfFQZ1LI00vs8Bm_xp_Q3OPZQhdX349_noMJvVLwsPYSmTuuW_3liopI_r81pmcDZg65jCMUFXqvmIpqx7u6U4IEeACgzNCW85V8IAz-ZA0aNxOMnuXQTZaHHmV2uofwvWZPRkS7rsQIfwVsrCbs5UoonSeDQgpKiPFVIR80nP7gTz4kfrG5NMAKhcwsZ6CmRUzErY"/>
+<div class="flex flex-col text-sm">
+<p class="font-semibold text-slate-800 dark:text-slate-100">Alice Walker</p>
+<p class="text-slate-500 dark:text-slate-400">re: 123 Maple Street</p>
+<p class="text-slate-600 dark:text-slate-300 mt-1 line-clamp-2">"Can you provide more information on the school district for this address?"</p>
+</div>
+</div>
+<a class="mt-2 text-sm font-medium text-primary hover:underline text-center" href="#">View All Messages</a>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</body></html>

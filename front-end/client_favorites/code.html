@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Favorite Properties - RealEstate Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0A74DA",
+              "secondary": "#FFB703",
+              "background-light": "#F8F9FA",
+              "background-dark": "#101922",
+              "text-primary-light": "#212529",
+              "text-primary-dark": "#F8F9FA",
+              "text-secondary-light": "#6C757D",
+              "text-secondary-dark": "#adb5bd",
+              "card-light": "#FFFFFF",
+              "card-dark": "#182431",
+              "border-light": "#e9ecef",
+              "border-dark": "#343a40",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-center whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark/80 backdrop-blur-sm">
+<div class="flex items-center justify-between w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
+<div class="flex items-center gap-4 text-text-primary-light dark:text-text-primary-dark">
+<span class="material-symbols-outlined text-primary text-3xl">real_estate_agent</span>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">RealEstate Portal</h2>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<a class="text-sm font-medium leading-normal text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary" href="#">Home</a>
+<a class="text-sm font-medium leading-normal text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary" href="#">Search</a>
+<a class="text-sm font-bold leading-normal text-primary" href="#">Favorites</a>
+<a class="text-sm font-medium leading-normal text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary" href="#">Profile</a>
+</div>
+<div class="flex flex-1 justify-end items-center gap-2">
+<button class="flex items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-background-light dark:bg-background-dark text-text-secondary-light dark:text-text-secondary-dark hover:bg-primary/10 hover:text-primary">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-background-light dark:bg-background-dark text-text-secondary-light dark:text-text-secondary-dark hover:bg-primary/10 hover:text-primary">
+<span class="material-symbols-outlined text-xl">settings</span>
+</button>
+<div class="ml-2 bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBB65S_acBlx_WWP76iPl8Q4outnn-ZpcAHUVKbK70bb9Bq1E-_60Clw09Yi6eTBKzLk5wKYGXtQpFJZ3NCXvqmdOkJiWkwn770tqBKku54dTzUeld2ylYiZl4ujWWaci-cTMIRVA-nhQPZ8OVbHeJdF5ih1JgqY33JZx3A7sUU38LqlKq6lNpMVcKRXv8XBDdJI9Tfh_MPyDfuhuB05_IGbZs7bJsQ5zv4a5mwOEBv90gj-TshFaJh5QKIxRAPIAxTlSJCCba5jnQ");'></div>
+</div>
+</div>
+</header>
+<main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Filter & Sort Sidebar -->
+<aside class="lg:w-1/4 xl:w-1/5 space-y-6">
+<div class="p-6 bg-card-light dark:bg-card-dark rounded-lg shadow-sm">
+<h3 class="text-lg font-bold mb-4">Filters</h3>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-2" for="property-type">Property Type</label>
+<select class="w-full rounded-md border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:ring-primary focus:border-primary" id="property-type">
+<option>All Types</option>
+<option>House</option>
+<option>Apartment</option>
+<option>Condo</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-2">Status</label>
+<div class="space-y-2">
+<div class="flex items-center">
+<input checked="" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" id="for-sale" name="status" type="checkbox"/>
+<label class="ml-2 block text-sm" for="for-sale">For Sale</label>
+</div>
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" id="for-rent" name="status" type="checkbox"/>
+<label class="ml-2 block text-sm" for="for-rent">For Rent</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-card-light dark:bg-card-dark rounded-lg shadow-sm">
+<h3 class="text-lg font-bold mb-4">Sort By</h3>
+<div>
+<select class="w-full rounded-md border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:ring-primary focus:border-primary" id="sort-by">
+<option>Date Added (Newest)</option>
+<option>Price (High to Low)</option>
+<option>Price (Low to High)</option>
+</select>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<div class="flex-1">
+<!-- Page Heading -->
+<div class="mb-8">
+<h1 class="text-4xl font-black leading-tight tracking-[-0.033em]">My Favorite Properties</h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal leading-normal mt-2">View and manage all the properties you have saved as favorites.</p>
+</div>
+<!-- Image Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Property Card 1 -->
+<div class="flex flex-col bg-card-light dark:bg-card-dark rounded-lg shadow-sm overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+<div class="relative">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Modern house with a pool" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdqmEVXNSwBcovfSvA_Ofok7A9vWEek_ej-TZGCOokXCtwq1kiUm8gfsPv3vuvlV_zxKlN0UrB-oBb5tx46F4bjGotlmd2UP5CvVBVckrokWuJeTqyfqbUWqD-MkfhjThKpQACR6xp0Cli4RRMeaNvktu67Fo9K5xPrMinxunwAfms2-EQ_cUYz7W26p9QugNbcHM81uLZbLbIy_1KMmZhvU9i1CRlmbk3JJH_WBq6jw_cP3hFheMnxgol9ofewvKspSit5kkgLB0");'></div>
+<button class="absolute top-3 right-3 flex items-center justify-center size-9 bg-black/50 rounded-full text-white hover:bg-primary">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 bg-primary text-white text-xs font-bold px-2 py-1 rounded">FOR SALE</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<p class="text-xl font-bold leading-normal">$1,200,000</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal mt-1">123 Ocean View Drive, Miami, FL</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal mt-2">4 Bed | 3 Bath | 2,500 sqft</p>
+<div class="mt-auto pt-4">
+<a class="w-full text-center flex items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-primary/10 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary hover:text-white transition-colors duration-300" href="#">
+<span class="truncate">View Details</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="flex flex-col bg-card-light dark:bg-card-dark rounded-lg shadow-sm overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+<div class="relative">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="City apartment with large windows" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCj-jLK52OvzqgJwi9jFjvsZz6qkcw9-ANmeHPyW5fiIPw0WDVF2uB_m7DchbDw_jV3_i-iSI1t6R6WOGSFBdth2kvGUO0QNjh0onjOuzduJZdH8vFSELx-gpNZP25QOT5ecuU0J8n8wDxJQnaPKqxHaSuZKWfnO2NNupEZZ6RC8Myo1yJp9xnrhnV-aFg965c2s-TIXQMXk8cjHOMEzJSCk1JNNfmYRBiL0W-TOxyJfrfaboFZfCMyDxb2P9uz7CVH-yAoEt-jZLw");'></div>
+<button class="absolute top-3 right-3 flex items-center justify-center size-9 bg-black/50 rounded-full text-white hover:bg-primary">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 bg-primary text-white text-xs font-bold px-2 py-1 rounded">FOR SALE</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<p class="text-xl font-bold leading-normal">$750,000</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal mt-1">456 Cityscape Ave, Apt 12B, New York, NY</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal mt-2">2 Bed | 2 Bath | 1,200 sqft</p>
+<div class="mt-auto pt-4">
+<a class="w-full text-center flex items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-primary/10 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary hover:text-white transition-colors duration-300" href="#">
+<span class="truncate">View Details</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Property Card 3 -->
+<div class="flex flex-col bg-card-light dark:bg-card-dark rounded-lg shadow-sm overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+<div class="relative">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Suburban house with a green lawn" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-dbM748Tnt_Pg-lqQuV59xc59NBG2p5EMxnCHb6wHM03eBEkixfckTJmTLfBPpGB0LUFJhFLLCL5Nl3aXByTLMFMiT9yzAxJ3IDUb0oEVrfCr7ZjZTbHDmnGSscmi6V0DLv54PBenRe7FXw1rV8GOpwJA65WsIJTZL1Qy0_EE6Jp5rRkxQXEKKkw27q-4zDo6H2me16Kg5d4o8npgsXOC1havnZ_YNxEdjsowUAJ1u0mebLQXQ2qJuruVpOEgMdUJy5Ay93X8P9k");'></div>
+<button class="absolute top-3 right-3 flex items-center justify-center size-9 bg-black/50 rounded-full text-white hover:bg-primary">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 bg-secondary text-text-primary-light text-xs font-bold px-2 py-1 rounded">NEW</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<p class="text-xl font-bold leading-normal">$980,000</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal mt-1">789 Maple Lane, Suburbia, IL</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal mt-2">5 Bed | 4 Bath | 3,200 sqft</p>
+<div class="mt-auto pt-4">
+<a class="w-full text-center flex items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-primary/10 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary hover:text-white transition-colors duration-300" href="#">
+<span class="truncate">View Details</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Property Card 4 -->
+<div class="flex flex-col bg-card-light dark:bg-card-dark rounded-lg shadow-sm overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+<div class="relative">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Beachfront property with ocean view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAttoe2o2yjE66-U2GkDHFZEcR-YURcKV1hbJ68B9dLSz1D3J-NeHTXsmgX3G24iIsVDGehjTlG5-cpu9w8gTZewBbPUciRS2R2IIznRUm-wa6b7WPxYbRnWHwgyUysjVRQOGXW_hJ-X6pfOtMOplvXstdo9oXuceyC_j5FiCK2jSda8J8fLD15I-rTChnZ4lnct3Q0TksiYyUO2wIxe7t87BorAefsN_hG3hrrclArLk10eGjobUxCKUnpey7BE-PMriGcPUiuQc8");'></div>
+<button class="absolute top-3 right-3 flex items-center justify-center size-9 bg-black/50 rounded-full text-white hover:bg-primary">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 bg-primary text-white text-xs font-bold px-2 py-1 rounded">FOR SALE</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<p class="text-xl font-bold leading-normal">$2,500,000</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal mt-1">567 Sandy Shore, Malibu, CA</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal mt-2">5 Bed | 5 Bath | 4,000 sqft</p>
+<div class="mt-auto pt-4">
+<a class="w-full text-center flex items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-primary/10 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary hover:text-white transition-colors duration-300" href="#">
+<span class="truncate">View Details</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State (Uncomment to view) -->
+<!-- 
+                    <div class="flex flex-col items-center justify-center gap-6 py-16 text-center">
+                        <img src="https://storage.googleapis.com/prod.static-assets.design-tools/assets/2024-05-15/22-55-41/31411/5823.png" alt="Illustration of a house with a heart icon" class="w-full max-w-xs"/>
+                        <div class="flex max-w-md flex-col items-center gap-2">
+                            <p class="text-xl font-bold leading-tight tracking-[-0.015em]">You haven't saved any properties yet</p>
+                            <p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Start searching to find properties you love and save them here for later.</p>
+                        </div>
+                        <button class="flex min-w-[84px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-secondary text-text-primary-light text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90">
+                            <span class="truncate">Search for Properties</span>
+                        </button>
+                    </div> 
+                    -->
+<!-- Pagination -->
+<div class="flex items-center justify-center p-4 mt-8">
+<a class="flex size-10 items-center justify-center text-text-secondary-light dark:text-text-secondary-dark" href="#">
+<span class="material-symbols-outlined text-xl">chevron_left</span>
+</a>
+<a class="text-sm font-bold leading-normal tracking-[0.015em] flex size-10 items-center justify-center text-white rounded-full bg-primary" href="#">1</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center rounded-full hover:bg-primary/10 hover:text-primary" href="#">2</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center rounded-full hover:bg-primary/10 hover:text-primary" href="#">3</a>
+<span class="text-sm font-normal leading-normal flex size-10 items-center justify-center rounded-full">...</span>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center rounded-full hover:bg-primary/10 hover:text-primary" href="#">10</a>
+<a class="flex size-10 items-center justify-center text-text-secondary-light dark:text-text-secondary-dark" href="#">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
