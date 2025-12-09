@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RealtyPortal - Properties for Sale</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-gray-200">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-20 flex w-full items-center justify-between whitespace-nowrap border-b border-gray-200/80 dark:border-gray-700/80 bg-background-light/80 dark:bg-background-dark/80 px-4 py-3 backdrop-blur-sm sm:px-6 lg:px-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">real_estate_agent</span>
+<h2 class="text-lg font-bold tracking-[-0.015em]">RealtyPortal</h2>
+</div>
+<div class="hidden items-center gap-9 lg:flex">
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">Buy</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">Rent</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">Agents</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">About</a>
+</div>
+<div class="flex flex-1 items-center justify-end gap-2">
+<button class="hidden min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] sm:flex">
+<span class="truncate">Log In</span>
+</button>
+<button class="hidden min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200 dark:bg-gray-700 text-sm font-bold leading-normal tracking-[0.015em] sm:flex">
+<span class="truncate">Sign Up</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPOd08QWChCdN1j0o86gBQrDC9uKMCN100rQcFGiYALDFu8FblS4BMCyNmNmOxB1DetZTwcDPkHO-cWQEAwVHXLWDI0zTIru32npEVwl89pKKm_Jbw4nJlpwDiyV_9gTQOK0blbfPCgSCLDK4w5hNDMSLFiB9STnK4WD_0yYsBfAAe4sq8IjG8XUbRV8oEYibvmnH1FpCCNSOzNIa20Smv7sSiCWVIURMK_Oz8MUSuLQ_I7R9bE5G09BLG9ixCYJWSCVU-DiCpJFM");'></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
+<!-- Filter Sidebar -->
+<aside class="lg:col-span-3">
+<div class="sticky top-24 space-y-6 rounded-xl bg-white dark:bg-gray-800 p-6 shadow-sm">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold">Filters</h3>
+<button class="text-sm font-medium text-primary hover:underline">Clear all</button>
+</div>
+<!-- For Sale / For Rent Toggle -->
+<div class="flex items-center justify-center rounded-lg bg-background-light dark:bg-background-dark p-1">
+<button class="w-full rounded-md py-2 text-sm font-semibold bg-white dark:bg-gray-700 text-primary shadow-sm">For Sale</button>
+<button class="w-full rounded-md py-2 text-sm font-medium text-gray-600 dark:text-gray-300">For Rent</button>
+</div>
+<!-- Price Range Filter -->
+<div>
+<h4 class="font-semibold mb-3">Price Range</h4>
+<div class="relative h-1 w-full rounded-full bg-gray-200 dark:bg-gray-600">
+<div class="absolute h-1 rounded-full bg-primary" style="left: 10%; right: 40%;"></div>
+<div class="absolute -top-1.5 h-4 w-4 rounded-full bg-white dark:bg-gray-300 border-2 border-primary shadow" style="left: 10%;"></div>
+<div class="absolute -top-1.5 h-4 w-4 rounded-full bg-white dark:bg-gray-300 border-2 border-primary shadow" style="right: 40%;"></div>
+</div>
+<div class="mt-4 flex justify-between gap-4">
+<input class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-sm focus:border-primary focus:ring-primary" type="text" value="$250,000"/>
+<input class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-sm focus:border-primary focus:ring-primary" type="text" value="$1,500,000"/>
+</div>
+</div>
+<!-- Bedrooms Filter -->
+<div>
+<h4 class="font-semibold mb-3">Bedrooms</h4>
+<div class="flex space-x-2">
+<button class="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 py-2 text-sm">Any</button>
+<button class="flex-1 rounded-lg border border-primary bg-primary/10 text-primary py-2 text-sm font-bold">1</button>
+<button class="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 py-2 text-sm">2</button>
+<button class="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 py-2 text-sm">3</button>
+<button class="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 py-2 text-sm">4+</button>
+</div>
+</div>
+<!-- Property Type Filter -->
+<div>
+<h4 class="font-semibold mb-3">Property Type</h4>
+<div class="space-y-2">
+<label class="flex items-center">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-2 text-sm">House</span>
+</label>
+<label class="flex items-center">
+<input checked="" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-2 text-sm">Apartment</span>
+</label>
+<label class="flex items-center">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-2 text-sm">Condo</span>
+</label>
+</div>
+</div>
+<button class="w-full rounded-lg bg-primary h-12 text-white font-bold text-sm">Apply Filters</button>
+</div>
+</aside>
+<!-- Property Listings -->
+<div class="lg:col-span-9">
+<!-- Page Heading and Search Bar -->
+<div class="mb-6">
+<div class="flex flex-wrap items-baseline justify-between gap-4">
+<div>
+<h1 class="text-4xl font-black tracking-[-0.033em]">Properties for Sale in San Francisco</h1>
+<p class="text-base font-normal text-gray-500 dark:text-gray-400">Showing 1-12 of 284 results</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">grid_view</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">view_list</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">map</span>
+</button>
+</div>
+</div>
+<div class="mt-4 flex flex-wrap items-center gap-4">
+<label class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="form-input w-full rounded-lg border-0 bg-white dark:bg-gray-800 h-12 pl-12 pr-4 text-base placeholder:text-gray-400 focus:outline-0 focus:ring-2 focus:ring-primary shadow-sm" placeholder="Search by City, Neighborhood, Zip Code..." type="text"/>
+</label>
+<div class="relative">
+<select class="appearance-none rounded-lg border-0 bg-white dark:bg-gray-800 shadow-sm h-12 pl-4 pr-10 text-sm font-medium focus:outline-0 focus:ring-2 focus:ring-primary">
+<option>Sort by: Newest</option>
+<option>Price: High to Low</option>
+<option>Price: Low to High</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">expand_more</span>
+</div>
+</div>
+</div>
+<!-- ImageGrid -->
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+<!-- Property Card 1 -->
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-sm transition-shadow hover:shadow-lg">
+<div class="relative">
+<div class="aspect-video w-full bg-cover bg-center" data-alt="Exterior view of a modern house in Mission District" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3MpgeIGk39C6M3tfU0erAdiPDGWaebiXi6yLfvb0GXU5m4ZEvIPcPWVNeeVjMAtX6sI9W2d7Fmnthfq0-GMm29MLgy9BFOxXHCpXEfcic5FEmHnW5wvFE8uc4eUXGvJ4gP-eKhsEgUZfybbRRWHwmRO0Z6GVN4vhfZ6-W6BImBPvx0sJxXuKpFP-RDXX8zhjbGbInW-Rv1GodyBVaUzcS6dY5gcYgUseLBPGBPZgTeActxwYorUMbBJn3LCDtnfZXfDImxDN8Ncg");'></div>
+<button class="absolute top-3 right-3 rounded-full bg-white/80 p-2 text-gray-600 backdrop-blur-sm transition hover:text-red-500">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+<div class="absolute bottom-3 left-3 rounded-full bg-primary/80 px-3 py-1 text-xs font-bold text-white backdrop-blur-sm">New Listing</div>
+</div>
+<div class="flex flex-col gap-1 p-4">
+<p class="text-xl font-bold">$1,200,000</p>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-300">123 Maple St, Mission District</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">3 Beds | 2 Baths | 1,800 sqft</p>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-sm transition-shadow hover:shadow-lg">
+<div class="relative">
+<div class="aspect-video w-full bg-cover bg-center" data-alt="Cozy home exterior in Noe Valley" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAncnBVHhvhop3FQcWL8kYxakfsdDP3-CJrPn_wgmKQadAURnbYUO3L1FyIl-_tzkUJk-VVB63p3DolaN7-7KKgvzm8_JJ_ZnVYYxqs9IJaQflpUq9n4sj-BfFqa5slE59sBNmi0poo9ACCQvecLQgThQNMHQJTfdMhE4uwcdoJi_4gpPzlab3QkQyz4twlng9L20Uex-bces07H2ng1lkxoECZlgpoIXD0LEjYGjHjKOT4N2Es3FWfFOto4xkVv4CbYZV_u2_v8c4");'></div>
+<button class="absolute top-3 right-3 rounded-full bg-white/80 p-2 text-red-500 backdrop-blur-sm transition">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-4">
+<p class="text-xl font-bold">$850,000</p>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-300">456 Oak Ave, Noe Valley</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">2 Beds | 2 Baths | 1,200 sqft</p>
+</div>
+</div>
+<!-- Property Card 3 -->
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-sm transition-shadow hover:shadow-lg">
+<div class="relative">
+<div class="aspect-video w-full bg-cover bg-center" data-alt="Luxury mansion in Pacific Heights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBniL_XUDs5A74AWKxNpFJGqxPbyuXKCsjTjGCPK6ziiu2NcvXSxdolyunK_NhusP94jBUqIXeOReVLp79J5o5yUylnMeeBymjfbovFoCMzsnua6yaDbPVwKofFCUhXYZxJmf7dACrSVqzUhN3RMWrEy5f41cNHKK3jxA-hES7ZLojrbhG3wijTYB33BgTrPKWYEAuyv3lRGI6mUqkJNGbIk1oXfULFVa7vlRr2t-In0Hx248rVjl4gtTR9KXTxJO4R3eH3Aj23SYQ");'></div>
+<button class="absolute top-3 right-3 rounded-full bg-white/80 p-2 text-gray-600 backdrop-blur-sm transition hover:text-red-500">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+<div class="absolute bottom-3 left-3 rounded-full bg-orange-500/80 px-3 py-1 text-xs font-bold text-white backdrop-blur-sm">Price Reduced</div>
+</div>
+<div class="flex flex-col gap-1 p-4">
+<p class="text-xl font-bold">$2,150,000</p>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-300">789 Pine Ln, Pacific Heights</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">4 Beds | 3.5 Baths | 3,200 sqft</p>
+</div>
+</div>
+<!-- More Cards... -->
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-sm transition-shadow hover:shadow-lg">
+<div class="relative">
+<div class="aspect-video w-full bg-cover bg-center" data-alt="Urban apartment building in SOMA" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4QUW8e8RbfYztGxQREGUVj1AyvF5P79YF82zN-3LHJmKmGb-JSq9ycHvf8ycRg9w8GMiAr_7xmn3XWs0cM04SOv4Q4kfuYlWWXQbu1afshGyHi05w6DukocmI2J981LPWeQ3UIZQ2YNM2_dW9rmscthdmaCJz8L3LMAPr54L6C2QFDVKUWuakt0myafFZbKO3zy5njE2YJdwoDjh-QVXQlohUOvK5q62ntU1KtgzKAuFGoHAUGiZRA9j0_qV1vRAlrWgKQmDMsYs");'></div>
+<button class="absolute top-3 right-3 rounded-full bg-white/80 p-2 text-gray-600 backdrop-blur-sm transition hover:text-red-500">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-4">
+<p class="text-xl font-bold">$975,000</p>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-300">101 Elm Ct, SOMA</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">2 Beds | 1 Bath | 1,100 sqft</p>
+</div>
+</div>
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-sm transition-shadow hover:shadow-lg">
+<div class="relative">
+<div class="aspect-video w-full bg-cover bg-center" data-alt="Modern home with a view in the Marina" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgH8iGGCekDjDnpYvDHBw_JF9hmsC6huwlaqILYl18E7URVKu07nAXTA19kbflLUDO3VOfCG2JPZBuppa7HDmqy4OlA8Mp5VufCMIlb18eOO1XMN0_UwJZ5lxxAtfe8PVYP7foOrsay80GVTjfdl1c-B9uorf3GYHXSehXJa_XnOUy8Tj9kzK1OHH45oA4rMq-BmfNuuIk2H9Sesl9041xuZP3a5sx6FgLt-Dld71nVd4EdGcsBpE7tvdB8Wy3VQH22aDhK7HxskE");'></div>
+<button class="absolute top-3 right-3 rounded-full bg-white/80 p-2 text-gray-600 backdrop-blur-sm transition hover:text-red-500">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-4">
+<p class="text-xl font-bold">$1,500,000</p>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-300">212 Birch Rd, Marina</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">3 Beds | 2.5 Baths | 2,200 sqft</p>
+</div>
+</div>
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-sm transition-shadow hover:shadow-lg">
+<div class="relative">
+<div class="aspect-video w-full bg-cover bg-center" data-alt="Classic house in the Richmond district" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFRCMsz8g-CSCx8I4ZITvi-xocXvXyrXCZhUFvQpNu-7CS9IV8pH2hgy0V3KGRuCAxitq7NwR3UBMrHy8qfDR_IPJqt0vlIny2Dy1PdvOH1mohiW1qa4oKywUhz-ZCWd4UsgAtQXTwfdU6H5eDwJTL_ZXiGXDTjrQ6atw0o4USfvR3xFStjNRlrr4jQ00B6UPuYAkHtBvv-Xr6ymcJ2sffY21ygW4SCS8a8hPs-5QGJBD2aDhQ4tQFSxxmIMZ5ssXmacIrCf5UXXg");'></div>
+<button class="absolute top-3 right-3 rounded-full bg-white/80 p-2 text-gray-600 backdrop-blur-sm transition hover:text-red-500">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-4">
+<p class="text-xl font-bold">$780,000</p>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-300">313 Cedar Blvd, Richmond</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">2 Beds | 1 Bath | 1,050 sqft</p>
+</div>
+</div>
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-sm transition-shadow hover:shadow-lg">
+<div class="relative">
+<div class="aspect-video w-full bg-cover bg-center" data-alt="Large family home in Presidio Heights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDXRyrN5IdfTSnj452Kq3SZZ3nh2DvYoU8Kjcg_rAgIoy0KClTunBiynrhu6vXJx6KTZq8J-zlgdDtOdOWBzZN7macMjRcrMiTVGQldfPz8A58zXo55tAxxkNDjFmbAESehxu71Ix373acJJSonUaIi2gxn8aXhRMquRtibjB6aPFxaX_t816p0shzvk-JtptgaSR-Tqtp0Neyt98r5VOE8z4Em1J-vzcOTRBVNTBnlvrd-_hP3ydRZHJH-4khyfTsxjcB3_ijX4cg");'></div>
+<button class="absolute top-3 right-3 rounded-full bg-white/80 p-2 text-gray-600 backdrop-blur-sm transition hover:text-red-500">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-4">
+<p class="text-xl font-bold">$3,200,000</p>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-300">414 Spruce Way, Presidio Heights</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">5 Beds | 4 Baths | 4,500 sqft</p>
+</div>
+</div>
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-sm transition-shadow hover:shadow-lg">
+<div class="relative">
+<div class="aspect-video w-full bg-cover bg-center" data-alt="Stylish townhouse in Hayes Valley" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCGad2ABhV2p2PskH-eNkqKcPlI1cIMEpJQI088bBjhvrte0RpixfxQ2TmNxUPWe8MjVJqeP8lUQvOpZfu8FeesvSrnvjCOKVjwlKit14nzjKlBGSPyAWds_Jp0ldnIW-DaSreCtxSQ3WYrrMpkZ4ke9WEoxJeuBtP594Q9ibJthn6451xH0uVOFGH4xXShrBzrbdGRA4uOINCC1GLGrxcpcbTyPAruOgm17RHWxh6JxN_gOC26Xj8aKvepyyg_56O5_UYF5wcHAlQ");'></div>
+<button class="absolute top-3 right-3 rounded-full bg-white/80 p-2 text-gray-600 backdrop-blur-sm transition hover:text-red-500">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-4">
+<p class="text-xl font-bold">$1,100,000</p>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-300">515 Redwood Dr, Hayes Valley</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">3 Beds | 2 Baths | 1,700 sqft</p>
+</div>
+</div>
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-sm transition-shadow hover:shadow-lg">
+<div class="relative">
+<div class="aspect-video w-full bg-cover bg-center" data-alt="House with a panoramic view in Twin Peaks" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC1fCQwnRqQPkAumvv0woFtEY7MM1F0xNu9xLJ1P52C5WDFwILVwg1XXogV8OqGPhmizTKDyGxu4yTLSZ6PplcqznrQzFxpUWVUTQb524-ohfTtZOvl1FLLpvtl_QjMQg8Gfi7QXYVvbYyBN3rSxfSTVA8StHffoLLJiMulQ-GmH3fUUjxKESw51EJGiKGUFRdJrry1vkRc1wHoeyT2dREdwoLNzblIabiD6G-_pSw4j10EcnlLEuuqbF2YjbwFzVS-4PVRl-2wKzM");'></div>
+<button class="absolute top-3 right-3 rounded-full bg-white/80 p-2 text-gray-600 backdrop-blur-sm transition hover:text-red-500">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-4">
+<p class="text-xl font-bold">$920,000</p>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-300">616 Aspen Pl, Twin Peaks</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">2 Beds | 2 Baths | 1,300 sqft</p>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-8 flex items-center justify-center">
+<a class="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white" href="#">1</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-700" href="#">2</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-700" href="#">3</a>
+<span class="flex h-10 w-10 items-center justify-center text-sm">...</span>
+<a class="flex h-10 w-10 items-center justify-center rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-700" href="#">24</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

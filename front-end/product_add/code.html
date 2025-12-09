@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create New Listing - Broker Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e1e5e8] dark:border-b-[#2c3a47] px-6 lg:px-10 py-3 bg-white dark:bg-background-dark sticky top-0 z-20">
+<div class="flex items-center gap-4 text-[#111418] dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Broker Portal</h2>
+</div>
+<div class="hidden lg:flex flex-1 justify-end items-center gap-8">
+<div class="flex items-center gap-9">
+<a class="text-[#111418] dark:text-gray-300 text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">My Listings</a>
+<a class="text-[#111418] dark:text-gray-300 text-sm font-medium leading-normal" href="#">Messages</a>
+<a class="text-[#111418] dark:text-gray-300 text-sm font-medium leading-normal" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Create New Listing</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f0f2f4] dark:bg-white/10 text-[#111418] dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvcQdoTER7HvPTiXxAk9AsqWwhx7z7jNvmKm_z-eBOXVd7ShmCpgOQLVxPt51cJMs0csdmxdeRL4dfs0m5P9zcX9yBmK8_1ZhEVWKXnIlbSkVHLTvKHxOn2mDuYFgR7RuZzHGnc1MVHAYl0phOZG3AzF2FrATDuCXJNWpv18R8A6ZTbO_hInY0jzYlOH1gsOeGmZ2ZHW0cYAB0VbUhiWBzxU3PZIzgrkKFzRVofyb9nIIA-OE0jg5GAXsnPN8hsE3DcKRRO-5SC-k');"></div>
+</div>
+<button class="lg:hidden flex items-center justify-center p-2 rounded-lg bg-[#f0f2f4] dark:bg-white/10 text-[#111418] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="flex min-w-72 flex-col gap-2 mb-8">
+<p class="text-[#111418] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Create a New Listing</p>
+<p class="text-[#617589] dark:text-gray-400 text-base font-normal leading-normal">Fill in the details below to publish your property on the portal.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Main Form Area (Left Column) -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Section 1: Basic Information -->
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-[#e1e5e8] dark:border-[#2c3a47]">
+<h2 class="text-[#111418] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-5" id="basic-info">Basic Information</h2>
+<div class="space-y-6">
+<div class="flex flex-col">
+<label class="text-[#111418] dark:text-gray-200 text-base font-medium leading-normal pb-2" for="listing-title">Listing Title</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-[#2c3a47] bg-white dark:bg-background-dark focus:border-primary h-14 placeholder:text-[#617589] p-[15px] text-base font-normal leading-normal" id="listing-title" placeholder="e.g., Stunning 3-Bedroom Home with Ocean Views" value=""/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col">
+<label class="text-[#111418] dark:text-gray-200 text-base font-medium leading-normal pb-2" for="property-type">Property Type</label>
+<select class="form-select flex w-full min-w-0 flex-1 overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-[#2c3a47] bg-white dark:bg-background-dark focus:border-primary h-14 p-[15px] text-base font-normal leading-normal" id="property-type">
+<option>Select property type</option>
+<option>House</option>
+<option>Apartment</option>
+<option>Condo</option>
+<option>Townhouse</option>
+</select>
+</div>
+<div class="flex flex-col">
+<label class="text-[#111418] dark:text-gray-200 text-base font-medium leading-normal pb-2" for="listing-status">Listing Status</label>
+<select class="form-select flex w-full min-w-0 flex-1 overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-[#2c3a47] bg-white dark:bg-background-dark focus:border-primary h-14 p-[15px] text-base font-normal leading-normal" id="listing-status">
+<option>Select status</option>
+<option>For Sale</option>
+<option>For Rent</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="text-[#111418] dark:text-gray-200 text-base font-medium leading-normal pb-2" for="description">Detailed Description</label>
+<textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-[#2c3a47] bg-white dark:bg-background-dark focus:border-primary placeholder:text-[#617589] p-[15px] text-base font-normal leading-normal" id="description" placeholder="Describe the property in detail..." rows="6"></textarea>
+</div>
+</div>
+</div>
+<!-- Section 2: Location -->
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-[#e1e5e8] dark:border-[#2c3a47]">
+<h2 class="text-[#111418] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-5" id="location">Location</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="md:col-span-2 flex flex-col">
+<label class="text-[#111418] dark:text-gray-200 text-base font-medium leading-normal pb-2" for="address">Address</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-[#2c3a47] bg-white dark:bg-background-dark focus:border-primary h-14 placeholder:text-[#617589] p-[15px] text-base font-normal leading-normal" id="address" placeholder="Enter street address" value=""/>
+</div>
+<div class="flex flex-col">
+<label class="text-[#111418] dark:text-gray-200 text-base font-medium leading-normal pb-2" for="city">City</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-[#2c3a47] bg-white dark:bg-background-dark focus:border-primary h-14 placeholder:text-[#617589] p-[15px] text-base font-normal leading-normal" id="city" value=""/>
+</div>
+<div class="flex flex-col">
+<label class="text-[#111418] dark:text-gray-200 text-base font-medium leading-normal pb-2" for="state">State / Province</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-[#2c3a47] bg-white dark:bg-background-dark focus:border-primary h-14 placeholder:text-[#617589] p-[15px] text-base font-normal leading-normal" id="state" value=""/>
+</div>
+<div class="flex flex-col">
+<label class="text-[#111418] dark:text-gray-200 text-base font-medium leading-normal pb-2" for="zip">Zip / Postal Code</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-[#2c3a47] bg-white dark:bg-background-dark focus:border-primary h-14 placeholder:text-[#617589] p-[15px] text-base font-normal leading-normal" id="zip" value=""/>
+</div>
+</div>
+<div class="aspect-[16/9] bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+<div class="text-center text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-5xl">map</span>
+<p class="mt-2 font-medium">Interactive Map Area</p>
+<p class="text-sm">Pin the exact location</p>
+</div>
+</div>
+</div>
+<!-- Section 3: Details & Amenities -->
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-[#e1e5e8] dark:border-[#2c3a47]">
+<h2 class="text-[#111418] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-5" id="details-amenities">Property Details &amp; Amenities</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+<div class="flex flex-col">
+<label class="text-[#111418] dark:text-gray-200 text-base font-medium leading-normal pb-2" for="price">Price ($)</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-[#2c3a47] bg-white dark:bg-background-dark focus:border-primary h-14 placeholder:text-[#617589] p-[15px] text-base font-normal leading-normal" id="price" placeholder="e.g., 500000" type="number" value=""/>
+</div>
+<div class="flex flex-col">
+<label class="text-[#111418] dark:text-gray-200 text-base font-medium leading-normal pb-2" for="area">Area (sq. ft.)</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-[#2c3a47] bg-white dark:bg-background-dark focus:border-primary h-14 placeholder:text-[#617589] p-[15px] text-base font-normal leading-normal" id="area" placeholder="e.g., 2200" type="number" value=""/>
+</div>
+<div class="flex flex-col">
+<label class="text-[#111418] dark:text-gray-200 text-base font-medium leading-normal pb-2" for="bedrooms">Bedrooms</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-[#2c3a47] bg-white dark:bg-background-dark focus:border-primary h-14 placeholder:text-[#617589] p-[15px] text-base font-normal leading-normal" id="bedrooms" placeholder="e.g., 3" type="number" value=""/>
+</div>
+<div class="flex flex-col">
+<label class="text-[#111418] dark:text-gray-200 text-base font-medium leading-normal pb-2" for="bathrooms">Bathrooms</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-[#2c3a47] bg-white dark:bg-background-dark focus:border-primary h-14 placeholder:text-[#617589] p-[15px] text-base font-normal leading-normal" id="bathrooms" placeholder="e.g., 2" type="number" value=""/>
+</div>
+</div>
+<h3 class="text-[#111418] dark:text-white text-lg font-semibold leading-tight tracking-[-0.015em] mb-4">Amenities</h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+<label class="flex items-center space-x-3 cursor-pointer"><input class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary" type="checkbox"/> <span class="text-gray-700 dark:text-gray-300">Swimming Pool</span></label>
+<label class="flex items-center space-x-3 cursor-pointer"><input class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary" type="checkbox"/> <span class="text-gray-700 dark:text-gray-300">Garage</span></label>
+<label class="flex items-center space-x-3 cursor-pointer"><input class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary" type="checkbox"/> <span class="text-gray-700 dark:text-gray-300">Fireplace</span></label>
+<label class="flex items-center space-x-3 cursor-pointer"><input class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary" type="checkbox"/> <span class="text-gray-700 dark:text-gray-300">Air Conditioning</span></label>
+<label class="flex items-center space-x-3 cursor-pointer"><input class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary" type="checkbox"/> <span class="text-gray-700 dark:text-gray-300">Backyard</span></label>
+<label class="flex items-center space-x-3 cursor-pointer"><input class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary" type="checkbox"/> <span class="text-gray-700 dark:text-gray-300">Furnished</span></label>
+<label class="flex items-center space-x-3 cursor-pointer"><input class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary" type="checkbox"/> <span class="text-gray-700 dark:text-gray-300">Gym</span></label>
+<label class="flex items-center space-x-3 cursor-pointer"><input class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary" type="checkbox"/> <span class="text-gray-700 dark:text-gray-300">Ocean View</span></label>
+</div>
+</div>
+</div>
+<!-- Sidebar (Right Column) -->
+<div class="lg:col-span-1">
+<div class="sticky top-24 space-y-8">
+<!-- Actions Card -->
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-[#e1e5e8] dark:border-[#2c3a47]">
+<h3 class="text-[#111418] dark:text-white text-lg font-semibold leading-tight tracking-[-0.015em] mb-4">Actions</h3>
+<div class="space-y-3">
+<button class="w-full flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]"><span class="truncate">Publish Listing</span></button>
+<button class="w-full flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary-light text-base font-bold leading-normal tracking-[0.015em]"><span class="truncate">Save as Draft</span></button>
+<button class="w-full flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 text-primary font-bold text-base leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined">visibility</span>
+<span>Preview</span>
+</button>
+</div>
+<p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">Draft saved 2 mins ago</p>
+</div>
+<!-- Media Card -->
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-[#e1e5e8] dark:border-[#2c3a47]">
+<h2 class="text-[#111418] dark:text-white text-lg font-semibold leading-tight tracking-[-0.015em] pb-4" id="media">Media</h2>
+<div class="flex items-center justify-center w-full">
+<label class="flex flex-col items-center justify-center w-full h-48 border-2 border-gray-300 dark:border-gray-600 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600" for="dropzone-file">
+<div class="flex flex-col items-center justify-center pt-5 pb-6 text-center px-4">
+<span class="material-symbols-outlined text-4xl text-gray-500 dark:text-gray-400">cloud_upload</span>
+<p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+</div>
+<input class="hidden" id="dropzone-file" multiple="" type="file"/>
+</label>
+</div>
+<div class="grid grid-cols-3 gap-3 mt-4">
+<div class="relative group">
+<img class="rounded-lg aspect-square object-cover w-full h-full" data-alt="Modern house exterior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAtwr5pCbVdxfuFtHebCkcR8pgGv-xwrWLxPXOPE4IGxxZrhlLwz7C2RSkYIQTPcN6gQ2wlgY-vPYICaYb3Y6VUrLwQMU45DUADZkKTSAMwm0U3m1Tau6MbADxLGGIg9-biPPgYG5HgR7H0deZ-heALQx3ns5wAtu5ImaVgBMa2mjLofYCApPyDmIOr2GRLVbxHmSfzbjbRoG8c4SrStKxOV7w84WDZne00ch36eehRCkZSk4baCrQp3ULaLbfnkcP81R490agOjM"/>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
+<button class="text-white"><span class="material-symbols-outlined">delete</span></button>
+</div>
+<div class="absolute top-1 left-1 bg-primary text-white text-xs font-bold px-2 py-0.5 rounded-full">Cover</div>
+</div>
+<div class="relative group">
+<img class="rounded-lg aspect-square object-cover w-full h-full" data-alt="House with pool" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsNAjT-h-TWFJBSsVJzH3TdAPC7O9kkSxOJH9BfdyKcj-aAejoceLlFiZnpayeUvU7AsqXOKyDp9Bhz0H9vTvy_RmSdGeDVtLXRGjvckZrlKk6BLGsltu3vmAGmZGFxbINo61j12gVbxyj7ehRdsqulNYRz8bMquwdSMzTmAOqWSEIoMwAe37F9TcgerlfQnNT3V1MdLXaNVVdrT7Bql7fzst2mEkbumdXn6MUH_cVOd6oWwItDZsABBFFZBwZ49akQObxWyEKSVM"/>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
+<button class="text-white"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<div class="relative group">
+<img class="rounded-lg aspect-square object-cover w-full h-full" data-alt="Living room interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-2NqZt5SqMMbK6DlRzB0LQI2uY53ANQqCyJIPXsWDhxJ8-cBN025oKEGgSKlu7H9JtdNKwQc2C309HBN1rjgQ6Gewmnbb6_Pv6hiEbBJbfEU4bTWHMa82wcaV7XOVlba_tbLBo5UA2nUPNlWxZbOGUZER5L6Bp3UZpx458ZIQGymGjowrJ72IcolpSPSdodrFy-xwzX32zvTbX3SJZm-RYDSjjFOU2wnbDp9Oe9ejMn4NZBKviihksDmjFkQsH5ksmBc6BastTlk"/>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
+<button class="text-white"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
