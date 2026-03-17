@@ -1,5 +1,5 @@
-import { MensagemInteresse } from "../../../../domain/entities/mensagem";
-import { MensagemRepository } from "../../../../domain/repositories/mensagem-repository";
+import { MensagemInteresse } from "../../../domain/entities/Mensagem";
+import { MensagemRepository } from "../../../domain/repositories/mensagem-repository";
 
 export class InMemoryMensagemRepository implements MensagemRepository {
   private readonly mensagens: MensagemInteresse[] = [];

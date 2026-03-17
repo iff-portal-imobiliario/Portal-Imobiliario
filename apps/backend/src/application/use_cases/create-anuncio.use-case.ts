@@ -1,6 +1,6 @@
 import { randomUUID } from "crypto";
 import { CreateAnuncioInput } from "../dtos/create-anuncio.dto";
-import { Anuncio } from "../../domain/entities/anuncio";
+import { Anuncio } from "../../domain/entities/Anuncio";
 import { AnuncioRepository } from "../../domain/repositories/anuncio-repository";
 
 export class CreateAnuncioUseCase {

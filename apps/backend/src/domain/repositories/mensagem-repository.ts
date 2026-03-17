@@ -1,4 +1,4 @@
-import { MensagemInteresse } from "../entities/mensagem";
+import { MensagemInteresse } from "../entities/Mensagem";
 
 export interface MensagemRepository {
   create(mensagem: MensagemInteresse): Promise<MensagemInteresse>;

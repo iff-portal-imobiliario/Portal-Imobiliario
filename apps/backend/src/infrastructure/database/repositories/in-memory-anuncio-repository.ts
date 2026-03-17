@@ -1,5 +1,5 @@
-import { Anuncio } from "../../../../domain/entities/anuncio";
-import { AnuncioFilters, AnuncioRepository } from "../../../../domain/repositories/anuncio-repository";
+import { Anuncio } from "../../../domain/entities/Anuncio";
+import { AnuncioFilters, AnuncioRepository } from "../../../domain/repositories/anuncio-repository";
 
 export class InMemoryAnuncioRepository implements AnuncioRepository {
   private readonly anuncios: Anuncio[] = [];

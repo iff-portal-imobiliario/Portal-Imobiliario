@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto";
-import { MensagemInteresse } from "../../domain/entities/mensagem";
+import { MensagemInteresse } from "../../domain/entities/Mensagem";
 import { AnuncioRepository } from "../../domain/repositories/anuncio-repository";
 import { MensagemRepository } from "../../domain/repositories/mensagem-repository";
 

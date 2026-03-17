@@ -1,5 +1,5 @@
 import { SearchAnunciosInput } from "../dtos/search-anuncios.dto";
-import { Anuncio } from "../../domain/entities/anuncio";
+import { Anuncio } from "../../domain/entities/Anuncio";
 import { AnuncioRepository } from "../../domain/repositories/anuncio-repository";
 
 export class SearchAnunciosUseCase {

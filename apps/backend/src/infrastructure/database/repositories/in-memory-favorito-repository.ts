@@ -1,4 +1,4 @@
-import { Favorito, FavoritoRepository } from "../../../../domain/repositories/favorito-repository";
+import { Favorito, FavoritoRepository } from "../../../domain/repositories/favorito-repository";
 
 export class InMemoryFavoritoRepository implements FavoritoRepository {
   private readonly favoritos: Favorito[] = [];

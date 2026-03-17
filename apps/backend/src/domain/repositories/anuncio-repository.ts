@@ -1,4 +1,4 @@
-import { Anuncio } from "../entities/anuncio";
+import { Anuncio } from "../entities/Anuncio";
 
 export type AnuncioFilters = {
   precoMin?: number;
