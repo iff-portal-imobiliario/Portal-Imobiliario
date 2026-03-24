@@ -41,6 +41,32 @@ Um **portal imobiliário** desenvolvido com **Clean Architecture** onde corretor
 
 ---
 
+## 📦 Exemplo de Chamada (POST /anuncios)
+
+```json
+{
+  "titulo": "Apartamento Moderno",
+  "descricao": "Apartamento com 2 quartos, varanda e garagem.",
+  "preco": 350000,
+  "bairro": "Centro",
+  "quartos": 2,
+  "fotos": ["foto1.jpg", "foto2.jpg"],
+  "corretorId": "id-do-corretor",
+  "role": "ROLE_CORRETOR"
+}
+```
+
+---
+
+## 🧪 Testes de Endpoint
+
+O arquivo de testes de endpoint (coleção Postman) está disponível em:
+- [docs/Portal_Imobiliario_Collection.json](docs/Portal_Imobiliario_Collection.json)
+
+Inclui o fluxo principal e cenários de erro para validação dos endpoints.
+
+---
+
 ## 🎓 Requisitos para a Entrega (Professor Ronaldo)
 
 ### 1. Diagrama de Classes / Entidade-Relacionamento
