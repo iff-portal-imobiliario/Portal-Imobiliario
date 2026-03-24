@@ -7,9 +7,9 @@ export class CreateAnuncioUseCase {
   constructor(private readonly anuncioRepository: AnuncioRepository) {}
 
   async execute(input: CreateAnuncioInput): Promise<Anuncio> {
-    if (input.role !== "ROLE_CORRETOR") {
-      throw new Error("Somente corretor pode criar anuncio");
-    }
+    // Permite fotos ser undefined ou array vazio
+    const fotosArray = Array.isArray(input.fotos) ? input.fotos : [];
+    const fotos = fotosArray.map((url) => ({ url }));
 
     const anuncio: Anuncio = {
       id: randomUUID(),
@@ -19,7 +19,7 @@ export class CreateAnuncioUseCase {
       bairro: input.bairro,
       quartos: input.quartos,
       corretorId: input.corretorId,
-      fotos: input.fotos.map((url) => ({ url }))
+      fotos
     };
 
     return this.anuncioRepository.create(anuncio);

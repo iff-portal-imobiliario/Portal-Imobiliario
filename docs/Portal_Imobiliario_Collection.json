@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "aa123b45-67c8-90d1-e234-f56789a01234",
+		"name": "Portal Imobiliario API - P1",
+		"description": "Collection com fluxo principal e cenarios de erro para validacao dos endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "tokenCorretor",
+			"value": ""
+		},
+		{
+			"key": "tokenCliente",
+			"value": ""
+		},
+		{
+			"key": "anuncioId",
+			"value": ""
+		}
+	],
+	"item": [
+		{
+			"name": "Fluxo Principal",
+			"item": [
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/health",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth - Register Corretor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Corretor P1\",\n  \"email\": \"corretor.p1@mail.com\",\n  \"password\": \"123456\",\n  \"role\": \"ROLE_CORRETOR\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth - Login Corretor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"corretor.p1@mail.com\",\n  \"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth - Register Cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Cliente P1\",\n  \"email\": \"cliente.p1@mail.com\",\n  \"password\": \"123456\",\n  \"role\": \"ROLE_CLIENTE\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth - Login Cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"cliente.p1@mail.com\",\n  \"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth - Me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{tokenCliente}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/auth/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Anuncios - Criar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{tokenCorretor}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titulo\": \"Apartamento com Vista Mar\",\n  \"descricao\": \"Apartamento amplo com duas vagas de garagem.\",\n  \"preco\": 350000,\n  \"bairro\": \"Meireles\",\n  \"quartos\": 3,\n  \"fotos\": [\n    \"https://site.com/imagens/img1.jpg\",\n    \"https://site.com/imagens/img2.jpg\"\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/anuncios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"anuncios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Anuncios - Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/anuncios?precoMin=100000&precoMax=400000&bairro=Meireles&quartos=3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"anuncios"
+							],
+							"query": [
+								{
+									"key": "precoMin",
+									"value": "100000"
+								},
+								{
+									"key": "precoMax",
+									"value": "400000"
+								},
+								{
+									"key": "bairro",
+									"value": "Meireles"
+								},
+								{
+									"key": "quartos",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Anuncios - Favoritar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{tokenCliente}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/anuncios/{{anuncioId}}/favoritos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"anuncios",
+								"{{anuncioId}}",
+								"favoritos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Anuncios - Enviar Mensagem",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{tokenCliente}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"texto\": \"Tenho interesse neste anuncio.\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/anuncios/{{anuncioId}}/mensagens",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"anuncios",
+								"{{anuncioId}}",
+								"mensagens"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Casos de Erro",
+			"item": [
+				{
+					"name": "Erro 401 - Sem token em /auth/me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Erro 403 - Cliente tentando criar anuncio",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{tokenCliente}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titulo\": \"Tentativa indevida\",\n  \"descricao\": \"Cliente nao pode criar\",\n  \"preco\": 200000,\n  \"bairro\": \"Centro\",\n  \"quartos\": 2,\n  \"fotos\": [\"https://site.com/imagens/t1.jpg\"]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/anuncios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"anuncios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Erro 400 - Criacao de anuncio sem fotos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{tokenCorretor}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titulo\": \"Anuncio invalido\",\n  \"descricao\": \"Sem lista de fotos\",\n  \"preco\": 180000,\n  \"bairro\": \"Centro\",\n  \"quartos\": 2\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/anuncios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"anuncios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

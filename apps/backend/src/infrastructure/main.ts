@@ -1,10 +1,6 @@
-import express from "express";
-import { routes } from "./api/routes";
+import { createApp } from "./app";
 
-const app = express();
-
-app.use(express.json());
-app.use(routes);
+const app = createApp();
 
 const port = Number(process.env.PORT ?? 3000);
 app.listen(port, () => {
