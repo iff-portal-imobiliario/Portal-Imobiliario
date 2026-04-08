@@ -74,7 +74,7 @@ npm run dev
 
 ## 📹 Demonstração (Vídeo do Projeto)
 **Vídeo demonstrando as funcionalidades de Interface e Integração:**
-- 📁 **Arquivo Local:** O vídeo demonstrativo está incluído na raiz deste repositório com o nome `Demonstração do Frontend.mp4` (ou o nome do seu arquivo). Baixe ou visualize o arquivo para conferir a apresentação, fluxo de dados e persistência.
+- 📁 **Link:** https://youtu.be/Sv0MCHDzWRQ
 
 ---
 
