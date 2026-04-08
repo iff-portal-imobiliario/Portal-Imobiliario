@@ -79,13 +79,7 @@ npm run dev
 ---
 
 ## 🖥️ Guia de Telas
-Abaixo estão as capturas das principais interfaces:
-
-- **1. Listagem de Anúncios (Home):**
-  *(Adicione a screenshot aqui: `![Home](./screenshots/home.png)`)*
-
-- **2. Cadastro de Novo Anúncio (Create):**
-  *(Adicione a screenshot aqui: `![Cadastro](./screenshots/cadastro.png)`)*
+Estão dentro da pasta screenshots!
 
 ---
 
