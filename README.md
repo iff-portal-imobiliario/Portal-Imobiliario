@@ -84,5 +84,4 @@ Estão dentro da pasta screenshots!
 ---
 
 ## 📦 Link da Release
-A entrega oficial (Avaliação P2) está disponível na Release v2.0 do GitHub:
-- [🔗 Acessar Release v2.0.0-p2](https://github.com/SEU_USUARIO/SEU_REPOSITORIO/releases/tag/v2.0.0-p2) *(Observação: Lembre-se de substituir o link com a URL do seu repositório após criar a release)*
+- https://github.com/iff-portal-imobiliario/Portal-Imobiliario/releases/tag/v2.0.0-p2
